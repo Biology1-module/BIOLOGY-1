@@ -904,6 +904,7 @@ modules.forEach((mod, i) => {
     </div>
   `).join('');
 
+  // UPDATED: Added the Start Learning button with dynamic routing to module${num}.html
   panel.innerHTML = `
     <div class="mod-card">
       <div class="mod-card-header">
@@ -912,7 +913,7 @@ modules.forEach((mod, i) => {
           <h3>${mod.title}</h3>
           <p>${mod.desc}</p>
         </div>
-        <a href="module${mod.num}.html" class="btn btn-primary btn-start">Start Learning →</a>
+        <a href="module${mod.num}/module${mod.num}.html" class="btn btn-primary btn-start">Start Learning →</a>
       </div>
       <div class="mod-activities">
         <div class="act-section-title">Activities & Assessments</div>
