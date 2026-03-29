@@ -694,7 +694,7 @@
     document.getElementById(`toc-${currentLesson}`).classList.add('completed');
     if (currentLesson > highestCompleted) {
       highestCompleted = currentLesson;
-      const progressPercentage = ((highestCompleted) / 5) * 100;
+      const progressPercentage = ((highestCompleted) / 6) * 100;
       document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
     }
     if(document.getElementById(`toc-${currentLesson + 1}`)) switchLesson(currentLesson + 1);
