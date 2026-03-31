@@ -35,9 +35,12 @@
   --nav-h:      64px;
 }
 
+
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
+
 html { scroll-behavior:smooth; font-size:16px; }
+
 
 body {
   font-family:'Plus Jakarta Sans', sans-serif;
@@ -47,6 +50,7 @@ body {
   overflow-x:hidden;
 }
 
+
 /* ── NOISE TEXTURE OVERLAY ── */
 body::after {
   content:'';
@@ -54,6 +58,7 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   pointer-events:none; z-index:9999; opacity:.4;
 }
+
 
 /* ── AMBIENT BACKGROUND ── */
 .bg-orbs {
@@ -70,6 +75,7 @@ body::after {
 @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(50px,-40px)} }
 @keyframes drift3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,30px)} }
 
+
 /* ─────────────────────────────────────────
    NAV
 ───────────────────────────────────────── */
@@ -84,6 +90,7 @@ nav {
   gap:1rem;
 }
 
+
 .nav-logo {
   font-family:'Fraunces', serif;
   font-size:1.35rem; font-weight:900;
@@ -93,6 +100,7 @@ nav {
   text-decoration:none;
 }
 .nav-logo .accent { color:var(--amber); font-style:italic; }
+
 
 /* hamburger */
 .hamburger {
@@ -107,6 +115,7 @@ nav {
 .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity:0; }
 .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
 
 .nav-menu {
   display:flex; align-items:center; gap:.25rem; list-style:none;
@@ -123,10 +132,12 @@ nav {
 .nav-menu a:hover { color:var(--mist); background:rgba(82,183,136,.1); }
 .nav-menu a.active { color:var(--forest); background:var(--leaf); }
 
+
 /* ─────────────────────────────────────────
    SECTIONS
 ───────────────────────────────────────── */
 .page { position:relative; z-index:1; scroll-margin-top:var(--nav-h); }
+
 
 /* ─────────────────────────────────────────
    HERO
@@ -138,6 +149,7 @@ nav {
   text-align:center;
 }
 
+
 .hero-eyebrow {
   display:inline-flex; align-items:center; gap:.5rem;
   background:rgba(82,183,136,.12);
@@ -148,6 +160,7 @@ nav {
   margin-bottom:2.25rem;
   animation:fadeUp .6s ease both;
 }
+
 
 .hero h1 {
   font-family:'Fraunces', serif;
@@ -166,6 +179,7 @@ nav {
   height:3px; background:var(--leaf); border-radius:2px; opacity:.5;
 }
 
+
 .hero-sub {
   font-size:clamp(.95rem,2.5vw,1.15rem);
   color:rgba(183,228,199,.7); max-width:520px; line-height:1.75;
@@ -173,10 +187,12 @@ nav {
   animation:fadeUp .6s .2s ease both;
 }
 
+
 .hero-actions {
   display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;
   animation:fadeUp .6s .3s ease both;
 }
+
 
 .btn {
   display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
@@ -197,6 +213,7 @@ nav {
 }
 .btn-outline:hover { background:rgba(183,228,199,.07); border-color:rgba(183,228,199,.6); }
 
+
 /* stats strip */
 .hero-stats {
   display:flex; gap:2.5rem; flex-wrap:wrap; justify-content:center;
@@ -209,6 +226,7 @@ nav {
   color:var(--leaf); line-height:1;
 }
 .stat-label { font-size:.75rem; color:rgba(183,228,199,.5); font-weight:500; letter-spacing:.05em; margin-top:.25rem; }
+
 
 /* ─────────────────────────────────────────
    QUARTER CARDS
@@ -253,6 +271,7 @@ nav {
 .q-card h3 { font-size:1rem; font-weight:700; color:var(--cream); margin-bottom:.4rem; line-height:1.3; }
 .q-card p { font-size:.8rem; color:rgba(183,228,199,.5); line-height:1.6; }
 
+
 /* ─────────────────────────────────────────
    PAGE HEADERS
 ───────────────────────────────────────── */
@@ -270,6 +289,7 @@ nav {
 }
 .section-header p { font-size:.95rem; color:rgba(183,228,199,.55); }
 
+
 /* ─────────────────────────────────────────
    MODULES LAYOUT
 ───────────────────────────────────────── */
@@ -281,6 +301,7 @@ nav {
   gap:1.5rem;
   align-items:start;
 }
+
 
 /* sidebar */
 .mod-sidebar {
@@ -295,6 +316,7 @@ nav {
 .mod-sidebar::-webkit-scrollbar { width:4px; }
 .mod-sidebar::-webkit-scrollbar-track { background:transparent; }
 .mod-sidebar::-webkit-scrollbar-thumb { background:rgba(82,183,136,.3); border-radius:4px; }
+
 
 .sidebar-label {
   font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
@@ -322,14 +344,17 @@ nav {
 }
 .sidebar-btn.active .sb-text { color:var(--mist); }
 
+
 /* module content */
 .mod-content { min-width:0; }
+
 
 .mod-panel {
   display:none;
   animation:fadeUp .3s ease both;
 }
 .mod-panel.active { display:block; }
+
 
 .mod-card {
   background:var(--card);
@@ -339,11 +364,12 @@ nav {
   margin-bottom:1.25rem;
 }
 
+
 .mod-card-header {
   background:linear-gradient(135deg, var(--canopy) 0%, var(--forest) 100%);
   padding:2rem;
-  display:flex; 
-  align-items:center; 
+  display:flex;
+  align-items:center;
   gap:1.25rem;
   flex-wrap:wrap;
 }
@@ -363,12 +389,14 @@ nav {
 }
 .mod-card-header p { font-size:.85rem; color:rgba(183,228,199,.5); margin-top:.3rem; }
 
+
 .btn-start {
   margin-left: auto;
   white-space: nowrap;
   font-size: 0.9rem;
   padding: 0.75rem 1.5rem;
 }
+
 
 /* activities inside */
 .mod-activities { padding:1.5rem 2rem 2rem; }
@@ -379,6 +407,7 @@ nav {
 }
 .act-section-title::after { content:''; flex:1; height:1px; background:rgba(0,0,0,.08); }
 
+
 .act-list { display:flex; flex-direction:column; gap:.5rem; }
 .act-item {
   display:flex; align-items:center; gap:.9rem;
@@ -387,6 +416,7 @@ nav {
   border:1px solid rgba(45,106,79,.12);
   background:rgba(248,245,238,.6);
   transition:all .18s; cursor:pointer;
+  text-decoration:none;
 }
 .act-item:hover { background:rgba(82,183,136,.06); border-color:rgba(82,183,136,.25); transform:translateX(3px); }
 .act-icon {
@@ -394,23 +424,29 @@ nav {
   display:flex; align-items:center; justify-content:center; font-size:1rem;
 }
 .icon-pretest  { background:#fef3c7; }
+.icon-lesson   { background:#e0e7ff; }
 .icon-activity { background:#d8f3dc; }
 .icon-posttest { background:#fee2e2; }
+
 
 .act-info { flex:1; min-width:0; }
 .act-name { font-size:.875rem; font-weight:600; color:var(--ink); line-height:1.3; }
 .act-meta { font-size:.75rem; color:var(--subtle); margin-top:.15rem; }
 
+
 .act-badge {
   font-size:.65rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
   padding:.25rem .65rem; border-radius:100px; flex-shrink:0;
 }
-.badge-pre  { background:#fef3c7; color:#92400e; }
-.badge-act  { background:#d8f3dc; color:var(--moss); }
-.badge-post { background:#fee2e2; color:#991b1b; }
+.badge-pre    { background:#fef3c7; color:#92400e; }
+.badge-lesson { background:#e0e7ff; color:#3730a3; }
+.badge-act    { background:#d8f3dc; color:var(--moss); }
+.badge-post   { background:#fee2e2; color:#991b1b; }
+
 
 /* mobile module tabs */
 .mob-mod-tabs { display:none; }
+
 
 /* ─────────────────────────────────────────
    DEVELOPER PAGE
@@ -472,6 +508,7 @@ nav {
 }
 .dev-bio strong { color:var(--moss); }
 
+
 /* ─────────────────────────────────────────
    REFERENCES
 ───────────────────────────────────────── */
@@ -501,6 +538,7 @@ nav {
   text-decoration:underline;
 }
 
+
 /* ─────────────────────────────────────────
    FOOTER
 ───────────────────────────────────────── */
@@ -512,6 +550,7 @@ footer {
   font-size:.8rem; color:rgba(183,228,199,.3);
 }
 
+
 /* ─────────────────────────────────────────
    ANIMATIONS
 ───────────────────────────────────────── */
@@ -520,11 +559,13 @@ footer {
   to   { opacity:1; transform:translateY(0); }
 }
 
+
 /* ─────────────────────────────────────────
    MOBILE RESPONSIVE
 ───────────────────────────────────────── */
 @media (max-width: 768px) {
   :root { --nav-h: 60px; }
+
 
   /* mobile nav */
   .hamburger { display:flex; }
@@ -543,12 +584,15 @@ footer {
   .nav-menu.open { transform:translateY(0); }
   .nav-menu a { padding:.75rem 1rem; border-radius:12px; font-size:.95rem; }
 
+
   /* hero */
   .hero { padding:3rem 1.25rem 4rem; }
   .hero-stats { gap:1.5rem; }
 
+
   /* quarters */
   .quarter-grid { grid-template-columns:1fr 1fr; }
+
 
   /* modules — switch to mobile tabs */
   .modules-wrap { grid-template-columns:1fr; gap:0; }
@@ -556,7 +600,7 @@ footer {
   .mob-mod-tabs {
     display:flex; gap:.4rem; overflow-x:auto;
     padding:.75rem clamp(1rem,4vw,2.5rem);
-    scrollbar-width:none; -webkit-overflow-scrolling:touch;
+    scroll-bar-width:none; -webkit-overflow-scrolling:touch;
     position:sticky; top:var(--nav-h); z-index:10;
     background:rgba(13,40,24,.95); backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line);
@@ -572,17 +616,19 @@ footer {
   }
   .mob-tab.active { background:var(--leaf); color:var(--forest); border-color:var(--leaf); }
 
+
   /* card adjustments */
   .mod-card-header { padding:1.5rem; }
-  .btn-start { margin-left: 0; margin-top: 0.5rem; width: 100%; } 
+  .btn-start { margin-left: 0; margin-top: 0.5rem; width: 100%; }
   .mod-activities { padding:1.25rem 1.5rem 1.5rem; }
   .act-item { padding:.75rem .9rem; }
-  
+ 
   .dev-body { padding:0 1.5rem 2rem; }
   .dev-name { font-size:1.5rem; }
   .ref-wrap { padding: 0 1rem 3rem; }
   .ref-card { padding:1.5rem; }
 }
+
 
 @media (max-width: 420px) {
   .quarter-grid { grid-template-columns:1fr; }
@@ -592,18 +638,22 @@ footer {
 </head>
 <body>
 
+
 <div class="bg-orbs">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
 </div>
 
+
 <nav>
   <a class="nav-logo" href="#home">🌿 Bio<span class="accent">logy 1</span></a>
+
 
   <button class="hamburger" id="hamburger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
+
 
   <ul class="nav-menu" id="nav-menu">
     <li><a href="#home" class="active">🏠 Home</a></li>
@@ -613,11 +663,12 @@ footer {
   </ul>
 </nav>
 
+
 <section id="home" class="page">
   <div class="hero">
     <div class="hero-eyebrow">🧬 Interactive Learning Module</div>
     <h1>General <span class="em">Biology 1</span></h1>
-    <p class="hero-sub">First Semester Supplementary Materials — explore 11 modules covering cell theory, division, transport, and beyond.</p>
+    <p class="hero-sub">First Quarter Supplementary Materials — explore 11 modules covering cell theory, division, transport, and beyond.</p>
     <div class="hero-actions">
       <a href="#modules" class="btn btn-primary">Start Learning →</a>
       <a href="#dev" class="btn btn-outline">About the Author</a>
@@ -628,6 +679,7 @@ footer {
       <div class="stat"><div class="stat-num">1</div><div class="stat-label">Semester </div></div>
     </div>
   </div>
+
 
   <div class="quarters-strip">
     <div class="strip-label">Browse by topic</div>
@@ -660,22 +712,27 @@ footer {
   </div>
 </section>
 
+
 <section id="modules" class="page">
   <div class="section-header">
     <h2>📚 Learning Modules</h2>
     <p>Select a module from the sidebar to view its activities and materials.</p>
   </div>
 
+
   <div class="mob-mod-tabs" id="mobTabs"></div>
+
 
   <div class="modules-wrap">
     <aside class="mod-sidebar" id="sidebar">
       <div class="sidebar-label">Modules</div>
     </aside>
 
+
     <div class="mod-content" id="modContent"></div>
   </div>
 </section>
+
 
 <section id="dev" class="page">
   <div class="section-header">
@@ -706,17 +763,21 @@ footer {
   </div>
 </section>
 
+
 <section id="references" class="page">
   <div class="section-header">
     <h2>📖 References</h2>
-    <p>Sources integrated into these supplementary materials.</p>
+    <p>Sources and materials used in the development of this curriculum.</p>
   </div>
   <div class="ref-wrap">
     <div class="ref-card">
       <ul class="ref-list">
         <li>C, R. (2018, March 6). Difference Between Archaea and Bacteria (with Comparison Chart and Similarities). Bio Differences. <a href="https://biodifferences.com/difference-between-archaea-and-bacteria.html" target="_blank">https://biodifferences.com/difference-between-archaea-and-bacteria.html</a>.</li>
         <li>C, R. (2019, June 3). Difference Between Prokaryotic Cells and Eukaryotic Cells (with Comparison Chart and Explanation of organelles). Bio Differences. <a href="https://biodifferences.com/difference-between-prokaryotic-cells-and-eukaryotic-cells.html" target="_blank">https://biodifferences.com/difference-between-prokaryotic-cells-and-eukaryotic-cells.html</a>.</li>
-        <li>Clark, M. A., Choi, J., & Douglas, M. (n.d.). Microscopy. Khan Academy. Microbe Notes. (2024). Light microscope: Principle, types, parts, diagram. Libre Texts. (2023). Microscopy. ScienceDirect. (2024). Electron microscope.</li>
+        <li>Clark, M. A., Choi, J., & Douglas, M. (n.d.). Microscopy. Khan Academy.</li>
+        <li>Microbe Notes. (2024). Light microscope: Principle, types, parts, diagram.</li>
+        <li>Libre Texts. (2023). Microscopy.</li>
+        <li>ScienceDirect. (2024). Electron microscope.</li>
         <li>Eggleston, C. (2023, July 18). The cell membrane: Structure and function. TeachMePhysiology. <a href="https://teachmephysiology.com/histology/cell-structures/cell-membrane/" target="_blank">https://teachmephysiology.com/histology/cell-structures/cell-membrane/</a>.</li>
         <li>Khan Academy. (2016, September 2). Passive transport and active transport across a cell membrane. <a href="https://www.khanacademy.org/test-prep/mcat/cells/transport-across-a-cell-membrane/a/passive-transport-and-active-transport-across-a-cell-membrane-article" target="_blank">https://www.khanacademy.org/test-prep/mcat/cells/transport-across-a-cell-membrane/a/passive-transport-and-active-transport-across-a-cell-membrane-article</a>.</li>
         <li>Ostwald, M. (n.d.). 4.2 Discovery of cells and cell theory. In Biology: A Human Approach. Pressbooks. Retrieved March 29, 2026, from <a href="https://pressbooks.ccconline.org/acchumanbio/chapter/4-2-discovery-of-cells-and-cell-theory-3/" target="_blank">https://pressbooks.ccconline.org/acchumanbio/chapter/4-2-discovery-of-cells-and-cell-theory-3/</a>.</li>
@@ -726,9 +787,11 @@ footer {
   </div>
 </section>
 
+
 <footer>
   © 2026 General Biology 1 · Built by Raymart F. Redita
 </footer>
+
 
 <script>
 // ── DATA ──────────────────────────────────────────────────────────────────
@@ -738,6 +801,7 @@ const modules = [
     desc:"Foundations of modern biology — the history and principles of cell theory.",
     activities:[
       { type:"pre",  name:"What I Know",                        meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 1: The Cell Theory",        meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "My Mystery Scientist"', meta:"Investigative activity" },
       { type:"act",  name:'Activity 2: "Secondary Source Investigation"', meta:"Research activity" },
       { type:"act",  name:'Activity 3: "Cell Theory Timeline"', meta:"Timeline construction" },
@@ -749,6 +813,7 @@ const modules = [
     desc:"Structure and function of cell organelles in plant and animal cells.",
     activities:[
       { type:"pre",  name:"What I Know",                                meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 2: The Cell",                       meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "Cell Explorer: Identify the Organelles"', meta:"Identification activity" },
       { type:"act",  name:'Activity 2: "Cell City Analogy"',            meta:"Analogy activity" },
       { type:"act",  name:'Activity 3: "Cell Detective Activity"',      meta:"Problem-solving" },
@@ -760,6 +825,7 @@ const modules = [
     desc:"Comparing microscopy tools and their application in studying cell structures.",
     activities:[
       { type:"pre",  name:"What I Know",                                         meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 3: Light vs Electron Microscope",            meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1.1: "Zoom in! Identify the Microscope Parts"',meta:"Part identification" },
       { type:"act",  name:'Activity 1.2: "Zoom in! Identify the Microscope Parts"',meta:"Extended identification" },
       { type:"act",  name:'Activity 2: "Zooming into the Invisible: A Microscope Comparison"', meta:"Comparison activity" },
@@ -772,6 +838,7 @@ const modules = [
     desc:"Contrasting simple and complex cell types and their roles in life diversity.",
     activities:[
       { type:"pre",  name:"What I Know",                                         meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 4: Prokaryotic vs Eukaryotic",               meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "Battle of the Cells: Simple vs. Complex"', meta:"Comparison game" },
       { type:"act",  name:'Activity 2: "Cell Complexity and Life Diversity Discussion Game"', meta:"Discussion activity" },
       { type:"act",  name:'Activity 3: "Cell Quest: Unlocking Life\'s Classification"', meta:"Classification quest" },
@@ -783,6 +850,7 @@ const modules = [
     desc:"Exploring interphase, mitotic phase, and the checkpoints that regulate division.",
     activities:[
       { type:"pre",  name:"What I Know",                                       meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 5: Phase of Cell Cycle and Their Control Points", meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "Phase Finder: The Cell Cycle Challenge"', meta:"Challenge activity" },
       { type:"act",  name:'Activity 2: "Checkpoint Analysis"',                  meta:"Analysis activity" },
       { type:"act",  name:'Activity 3: "Checkpoint Breakdown: Predict the Consequences"', meta:"Prediction activity" },
@@ -794,6 +862,7 @@ const modules = [
     desc:"Contrasting mitosis and binary fission as the two major cell division strategies.",
     activities:[
       { type:"pre",  name:"What I Know",                                          meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 6: Cell Division",                            meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "Divide and Conquer: The Stages of Mitosis"', meta:"Stage identification" },
       { type:"act",  name:'Activity 2: "Split to Survive: The Binary Fission Cycle"', meta:"Cycle activity" },
       { type:"act",  name:'Activity 3: "One Cell, Two Systems: Comparing Life\'s Division Strategies"', meta:"Comparative study" },
@@ -805,6 +874,7 @@ const modules = [
     desc:"Meiotic stages and how crossing over generates genetic diversity.",
     activities:[
       { type:"pre",  name:"What I Know",                                       meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 7: Meiosis the importance of crossing over",meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "Meiosis in Action: Stage by Stage Challenge"', meta:"Stage challenge" },
       { type:"act",  name:'Activity 2: "Crossing Over: The Genetic Exchange Lab"', meta:"Lab simulation" },
       { type:"act",  name:'Activity 3: "The Power of Crossing Over"',           meta:"Analysis activity" },
@@ -816,6 +886,7 @@ const modules = [
     desc:"How cell division contributes to healing, growth, and creating new life.",
     activities:[
       { type:"pre",  name:"What I Know",                                          meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 8: Repair, Regeneration, and Reproduction",   meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "From Damage to Recovery: The Mitosis Effect"', meta:"Recovery scenario" },
       { type:"act",  name:'Activity 2: "The Chromosome Shuffle: Creating Life Through Meiosis"', meta:"Meiosis activity" },
       { type:"act",  name:'Activity 3: "Cell Division Showdown: Growth vs Reproduction"', meta:"Comparison showdown" },
@@ -827,10 +898,11 @@ const modules = [
     desc:"Passive and active transport — how substances cross the cell membrane.",
     activities:[
       { type:"pre",  name:"What I Know",                                         meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 9: Cell Transport Mechanisms",               meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "No Energy Needed: The Passive Transport Experience"', meta:"Diffusion & osmosis" },
       { type:"act",  name:'Activity 2: "Against the Flow: The Active Transport Mission"', meta:"Active transport" },
       { type:"act",  name:'Activity 3: "Transport Battle Cards"',                meta:"Card game activity" },
-      { type:"post", name:"Post-test",                                          meta:"Assessment" },
+      { type:"post", name:"Post-test",                                           meta:"Assessment" },
     ]
   },
   {
@@ -838,9 +910,10 @@ const modules = [
     desc:"Fluid mosaic model, selective permeability, and membrane function.",
     activities:[
       { type:"pre",  name:"What I Know",                                               meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 10: The Cell Membrane",                            meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "The Cell\'s Shield: Discovering Membrane Structure"', meta:"Structure discovery" },
       { type:"act",  name:'Activity 2: "Choose What Enters: The Selective Cell Membrane"', meta:"Permeability activity" },
-      { type:"act",  name:'Activity 3: "Cell in Crisis: The Membrane Matters!"',      meta:"Crisis scenario" },
+      { type:"act",  name:'Activity 3: "Cell in Crisis: The Membrane Matters!"',       meta:"Crisis scenario" },
       { type:"post", name:"Post-test",                                               meta:"Assessment" },
     ]
   },
@@ -849,24 +922,28 @@ const modules = [
     desc:"How cellular errors lead to diseases and how systems break down.",
     activities:[
       { type:"pre",  name:"What I Know",                                            meta:"Pre-assessment" },
+      { type:"lesson", name:"Lesson 11: Cellular Abnormalities",                    meta:"Reading & concepts" },
       { type:"act",  name:'Activity 1: "Cells Gone Wrong: Investigating Disease Through Evidence"', meta:"Evidence investigation" },
       { type:"act",  name:'Activity 2: "Disease Detectives: Cracking Cellular Abnormalities"', meta:"Detective activity" },
       { type:"act",  name:'Activity 3: "Cellular Breakdown: From Cell Error to System Failure"', meta:"Systems analysis" },
-      { type:"post", name:"Post-test",                                             meta:"Assessment" },
+      { type:"post", name:"Post-test",                                              meta:"Assessment" },
     ]
   }
 ];
 
+
 // icon map
-const icons = { pre:"📝", act:"⚡", post:"🎯" };
-const badgeClass = { pre:"badge-pre", act:"badge-act", post:"badge-post" };
-const badgeLabel = { pre:"Pre-test", act:"Activity", post:"Post-test" };
-const iconClass  = { pre:"icon-pretest", act:"icon-activity", post:"icon-posttest" };
+const icons = { pre:"📝", lesson:"📖", act:"⚡", post:"🎯" };
+const badgeClass = { pre:"badge-pre", lesson:"badge-lesson", act:"badge-act", post:"badge-post" };
+const badgeLabel = { pre:"Pre-test", lesson:"Lesson", act:"Activity", post:"Post-test" };
+const iconClass  = { pre:"icon-pretest", lesson:"icon-lesson", act:"icon-activity", post:"icon-posttest" };
+
 
 // ── BUILD UI ──────────────────────────────────────────────────────────────
 const sidebar   = document.getElementById('sidebar');
 const mobTabs   = document.getElementById('mobTabs');
 const modContent = document.getElementById('modContent');
+
 
 modules.forEach((mod, i) => {
   // sidebar button
@@ -877,6 +954,7 @@ modules.forEach((mod, i) => {
   sb.addEventListener('click', () => selectMod(i));
   sidebar.appendChild(sb);
 
+
   // mobile tab
   const mt = document.createElement('button');
   mt.className = 'mob-tab' + (i===0?' active':'');
@@ -885,13 +963,16 @@ modules.forEach((mod, i) => {
   mt.addEventListener('click', () => selectMod(i));
   mobTabs.appendChild(mt);
 
+
   // panel
   const panel = document.createElement('div');
   panel.className = 'mod-panel' + (i===0?' active':'');
   panel.id = `panel-${i}`;
 
-  const acts = mod.activities.map(a => `
-    <div class="act-item">
+
+  // NEW JAVASCRIPT: Using the onclick routing function instead of a standard <a> tag
+  const acts = mod.activities.map((a, actIndex) => `
+    <div onclick="goToActivity(${mod.num}, ${actIndex + 1})" class="act-item" style="text-decoration:none; cursor:pointer;">
       <div class="act-icon ${iconClass[a.type]}">${icons[a.type]}</div>
       <div class="act-info">
         <div class="act-name">${a.name}</div>
@@ -901,7 +982,7 @@ modules.forEach((mod, i) => {
     </div>
   `).join('');
 
-  // UPDATED: Added the Start Learning button with dynamic routing to module${num}.html
+
   panel.innerHTML = `
     <div class="mod-card">
       <div class="mod-card-header">
@@ -921,6 +1002,16 @@ modules.forEach((mod, i) => {
   modContent.appendChild(panel);
 });
 
+
+// ── NAVIGATION ROUTING FUNCTION ───────────────────────────────────────────
+// This function catches the click and routes the user to the exact module and lesson target
+function goToActivity(moduleNumber, activityNumber) {
+    console.log(`Navigating to Module ${moduleNumber}, Activity ${activityNumber}`);
+    const targetUrl = `module${moduleNumber}/module${moduleNumber}.html#lesson-${activityNumber}`;
+    window.location.href = targetUrl;
+}
+
+
 // ── SELECT MOD ────────────────────────────────────────────────────────────
 function selectMod(idx) {
   document.querySelectorAll('.sidebar-btn').forEach((b,i) =>
@@ -930,11 +1021,13 @@ function selectMod(idx) {
   document.querySelectorAll('.mod-panel').forEach((p,i) =>
     p.classList.toggle('active', i===idx));
 
+
   // scroll mob tab into view
   const tab = mobTabs.children[idx];
   if (tab) tab.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
 }
 window.selectMod = selectMod;
+
 
 // ── NAV HAMBURGER ─────────────────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
@@ -949,6 +1042,7 @@ navMenu.querySelectorAll('a').forEach(a => {
     navMenu.classList.remove('open');
   });
 });
+
 
 // ── ACTIVE NAV ON SCROLL ──────────────────────────────────────────────────
 const sections = document.querySelectorAll('.page');
@@ -965,3 +1059,4 @@ window.addEventListener('scroll', () => {
 </script>
 </body>
 </html>
+
